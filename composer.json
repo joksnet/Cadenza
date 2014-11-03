@@ -1,0 +1,22 @@
+{
+    "name": "eridal/cadenza",
+    "description": "Cadenza is just Composer, but without other people junk.",
+
+    "homepage": "https://github.com/eridal/cadenza",
+    "license": "MIT",
+
+    "authors": [{
+        "name": "Martin Scotta",
+        "email": "martinscotta@gmail.com",
+        "homepage": "http://www.martinscotta.com/"
+    }],
+
+    "require": {
+        "php": ">=5.3"
+    },
+
+    "autoload": {
+    },
+
+    "bin": ["cadenza.php"]
+}

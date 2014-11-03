@@ -1,0 +1,11 @@
+Hey there!
+
+Looks like your `composer.json` IS special.
+I couldn't find a way to have some like yours.
+Can I borrow a copy? That way I would make Cadenza work for you.
+
+Could you please contact me?
+  http://github.com/eridal/cadenza
+
+Thanks in advance!! --and sorry for the incoveniences
+  Eridal, the author
