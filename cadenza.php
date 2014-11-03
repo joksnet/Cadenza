@@ -1,7 +1,9 @@
 <?php
 
 include 'vendor/composer/autoload_classmap.php';
-define('FOLDER_CADENZA', $baseDir . '/composer');
+define('FOLDER_CADENZA', $baseDir . '/vendor.src');
+
+emptyFolder(FOLDER_CADENZA);
 
 $loader = require 'vendor/autoload.php';
 $packages = packages($loader);
@@ -55,6 +57,22 @@ function inVendor($path) {
     return false !== strpos($path, '/vendor/');
 }
 
+function emptyFolder($path) {
+
+    if (!is_dir($path)) {
+        return;
+    }
+
+    if ($dir = opendir($path)) {
+        while ($file = readdir($dir)) {
+            if ('.' !== $file and '..' !== $file) {
+                unlink("$path/$file");
+            }
+        }
+        closedir($dir);
+    }
+}
+
 function createFolder($path) {
 
     if (is_dir($path)) {
@@ -82,13 +100,7 @@ function createLink($target, $link) {
 
     $link = rtrim($link, '/');
 
-    if (is_link($link) and $currentTarget = readlink($link)) {
-        if ($currentTarget !== $target) {
-            throw new Exception("$link exists, pointing to $currentTarget");
-        } else {
-            unlink($link);
-        }
-    } else if (file_exists($link)) {
+    if (file_exists($link)) {
         throw new Exception("$link exists but is not link");
     }
 
