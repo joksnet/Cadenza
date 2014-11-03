@@ -19,7 +19,7 @@ Simply add **Cadenza** as a dependency to your composer.json file:
 ```json
 {
   "require": {
-    "eridal/cadenza": "*"
+    "eridal/cadenza": "master-dev"
   },
   "scripts": {
     "post-update-cmd": [ "php vendor/bin/cadenza.php" ]
